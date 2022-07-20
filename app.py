@@ -273,7 +273,7 @@ if uploaded_file:
 	outputpath = to_xlsx( described_df
 			    , outputdir='.\\'
 			    , prefix=outputfile_prefix
-			    , dfname=outputfile_prefix
+			    , dfname=outputfile_dfname
 			    , include_date=outputfile_include_date
 			    , include_time=outputfile_include_time
 			    , include_nrow=outputfile_include_nrow
