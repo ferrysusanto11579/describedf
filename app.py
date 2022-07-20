@@ -7,6 +7,8 @@ import numpy as np
 ##################################################################### CONFIG
 
 config = {}
+	
+buffer = io.BytesIO()
 
 
 
@@ -252,8 +254,6 @@ if st.checkbox('Technical overview'):
 			* Display output for analysis
 		''')
 
-	
-buffer = io.BytesIO()
 
 if use_example_file:
 	uploaded_file = "adult.csv"
