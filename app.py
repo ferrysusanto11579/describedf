@@ -272,9 +272,9 @@ if uploaded_file:
 	#st.dataframe(described_df.tail(8))
 	outputpath = to_xlsx( described_df
 			    , outputdir='.\\'
-			    , prefix='describedf'
-			    , dfname='dfname123'
-			    , include_date=True
-			    , include_time=True
-			    , include_nrow=True
-			    , include_ncol=True)
+			    , prefix=outputfile_prefix
+			    , dfname=outputfile_prefix
+			    , include_date=outputfile_include_date
+			    , include_time=outputfile_include_time
+			    , include_nrow=outputfile_include_nrow
+			    , include_ncol=outputfile_include_ncol)
