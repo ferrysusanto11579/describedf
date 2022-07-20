@@ -62,5 +62,9 @@ if use_example_file:
 
 if uploaded_file:
 	df = pd.read_csv(uploaded_file)
-	st.markdown("### Data preview")
-	st.dataframe(df.head())
+	st.write("## Data Preview")
+	st.dataframe(df.tail(8))
+
+	st.write("## Describe Data")
+	
+	submit_button = st.form_submit_button(label="Submit")
