@@ -202,7 +202,7 @@ def to_xlsx(df, outputdir='.\\', prefix=None, dfname=None, include_date=True, in
 	download_button = st.download_button(
 		label="Describe my data",
 		data=buffer,
-		file_name="outputpath",
+		file_name=outputpath,
 		mime="application/vnd.ms-excel")
     return outputpath
 
