@@ -251,6 +251,7 @@ if uploaded_file:
 	st.write("## Describe Data")
 	
 	with st.form(key="download_form"):
+		submit_button = st.form_submit_button(label="Describe my data")
 		st.write('### Output file name settings')
 		st.dataframe(described_df.tail(8), width=None, height=None)
 		
@@ -261,4 +262,4 @@ if uploaded_file:
 		outputfile_include_time = st.checkbox("Include time", True)
 		outputfile_include_nrow = st.checkbox("Include number of instances", True)
 		outputfile_include_ncol = st.checkbox("Include number of columns", True)
-		submit_button = st.form_submit_button(label="Describe my data")
+		
