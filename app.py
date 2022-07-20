@@ -259,4 +259,4 @@ if uploaded_file:
 	#st.dataframe(described_df.tail(8))
 	download_button = st.download_button(
 		label="Describe my data"
-		, data=described_df.astype(str)
+		, data=described_df.astype(str))
