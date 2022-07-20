@@ -13,12 +13,13 @@ config = {}
 ##################################################################### SIDEBAR
 
 with st.sidebar:
+	st.header('Input data')
 	uploaded_file = st.file_uploader("Upload CSV", type=".csv")
 	use_example_file = st.checkbox("Use example file", True, help="Adult Data Set from UCI")
 	
-	outputfile_prefix = st.text_input('Output file name prefix', value='describedf', placeholder='(optional)')
+	st.header('Output file name settings')
+	outputfile_prefix = st.text_input('Prefix', value='describedf', placeholder='(optional)')
 	outputfile_dfname = st.text_input('Dataframe name', placeholder='(optional)')
-	st.header('Additional settings:')
 	outputfile_include_date = st.checkbox("Include date", True)
 	outputfile_include_time = st.checkbox("Include time", True)
 	outputfile_include_nrow = st.checkbox("Include number of instances", True)
