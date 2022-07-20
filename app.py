@@ -13,11 +13,11 @@ config = {}
 ##################################################################### SIDEBAR
 
 with st.sidebar:
-	st.header('Input data')
+	st.write('## Input data')
 	uploaded_file = st.file_uploader("Upload CSV", type=".csv")
 	use_example_file = st.checkbox("Use example file", True, help="Adult Data Set from UCI")
 	
-	st.header('Output file name settings')
+	st.write('## Output file name settings')
 	outputfile_prefix = st.text_input('Prefix', value='describedf', placeholder='(optional)')
 	outputfile_dfname = st.text_input('Dataframe name', placeholder='(optional)')
 	outputfile_include_date = st.checkbox("Include date", True)
@@ -25,21 +25,6 @@ with st.sidebar:
 	outputfile_include_nrow = st.checkbox("Include number of instances", True)
 	outputfile_include_ncol = st.checkbox("Include number of columns", True)
 	
-	
-	#sb_baserevenue = st.number_input('Base Revenue (in million)', value=690.1)
-	#
-	#sb_revenuegrowth1 = st.number_input('Revenue Growth (next year)', value=0.05)
-	#sb_revenuegrowthN = st.number_input('Revenue Growth (terminal year)', value=0.02)
-	#
-	#sb_sharesout = st.number_input('Shares Outstanding (in million)', value=1200)
-	#
-	#sb_netmargin = st.number_input('Net Margin (%)', value=0.15)
-	#sb_fcfmargin = st.number_input('FCF Margin (%)', value=0.15)
-	#
-	#sb_numofyears = st.number_input('Number of Years', value=10)
-	#sb_terminalyearmultiple = st.number_input('Terminal Year Multiple', value=12)
-	#sb_discountrate = st.number_input('Discount Rate (%)', value=0.125)
-
 
 
 ##################################################################### MAIN PAGE
