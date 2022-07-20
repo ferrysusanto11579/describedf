@@ -261,6 +261,6 @@ if uploaded_file:
 	outputfile_include_time = st.checkbox("Include time", True)
 	outputfile_include_nrow = st.checkbox("Include number of instances", True)
 	outputfile_include_ncol = st.checkbox("Include number of columns", True)
-	download_button = st.download_button(
-		label="Describe my data"
-		, data=described_df)
+	#download_button = st.download_button(
+	#	label="Describe my data"
+	#	, data=described_df)
