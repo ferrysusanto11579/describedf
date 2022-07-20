@@ -267,6 +267,7 @@ if uploaded_file:
 	described_df = describe_df(df)
 	
 	st.write("## Data Preview")
+	st.write('shape: %s'%(df.shape))
 	st.dataframe(df.tail(8))
 
 	st.write("## Describe Data")
@@ -274,7 +275,7 @@ if uploaded_file:
 	for c in tmpdf.columns:
 		if tmpdf[c].dtype == 'object':
 			tmpdf[c] = tmpdf[c].replace('\n',', ')
-	st.dataframe(tmpdf.tail(8).astype(str))
+	st.dataframe(tmpdf.astype(str))
 	
 	outputpath = to_xlsx( described_df
 			    , original_df=df
