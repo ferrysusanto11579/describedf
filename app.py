@@ -17,6 +17,9 @@ with st.sidebar:
 	uploaded_file = st.file_uploader("Upload CSV", type=".csv")
 	use_example_file = st.checkbox("Use example file", True, help="Adult Data Set from UCI")
 	
+	load_data_button = st.form_submit_button(label="Load data")
+	
+	
 	st.write('## Output file name settings')
 	outputfile_prefix = st.text_input('Prefix', value='describedf', placeholder='(optional)')
 	outputfile_dfname = st.text_input('Dataframe name', placeholder='(optional)')
