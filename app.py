@@ -256,7 +256,7 @@ if uploaded_file:
 
 	st.write("## Describe Data")
 	
-	st.dataframe(described_df.tail(8))
+	#st.dataframe(described_df.tail(8))
 	outputfile_include_date = st.checkbox("Include date", True)
 	outputfile_include_time = st.checkbox("Include time", True)
 	outputfile_include_nrow = st.checkbox("Include number of instances", True)
