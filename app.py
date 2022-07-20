@@ -13,8 +13,16 @@ config = {}
 ##################################################################### SIDEBAR
 
 with st.sidebar:
-
-  use_example_file = st.checkbox("Use example file: Adult Data Set from UCI", True, help="Use in-built example file to demo the app")
+	uploaded_file = st.file_uploader("Upload CSV", type=".csv")
+	use_example_file = st.checkbox("Use example file", True, help="Adult Data Set from UCI")
+	
+	outputfile_prefix = st.text_input('Output file name prefix', value='describedf')
+	outputfile_dfname = st.text_input('Dataframe name',value=None,placeholder='(optional)')
+	outputfile_include_date = st.checkbox("Include date", True)
+	outputfile_include_time = st.checkbox("Include time", True)
+	outputfile_include_nrow = st.checkbox("Include number of instances", True)
+	outputfile_include_ncol = st.checkbox("Include number of columns", True)
+	
 	
 	#sb_baserevenue = st.number_input('Base Revenue (in million)', value=690.1)
 	#
