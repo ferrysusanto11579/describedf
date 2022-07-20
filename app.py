@@ -143,7 +143,7 @@ def to_xlsx(df, outputdir='.\\', prefix=None, dfname=None, include_date=True, in
     fmt_start_coln = 1
     fmt_end_coln = fmt_start_coln + df.shape[1]-1
     fmt_start_col, fmt_end_coln = colchars[fmt_start_coln], colchars[fmt_end_coln]
-    with pd.ExcelWriter(outputpath) as writer:
+    with pd.ExcelWriter(buffer) as writer:
         ## Data
         df.to_excel(writer, sheet_name=sheetname)
 
@@ -195,6 +195,15 @@ def to_xlsx(df, outputdir='.\\', prefix=None, dfname=None, include_date=True, in
         ## Apply formatting: Remarks
         colindex = list(colsorder).index('Remarks') + 1
         worksheet.set_column(colindex, colindex, 50)
+	
+	# Close the Pandas Excel writer and output the Excel file to the buffer
+	writer.save()
+	
+	download_button = st.download_button(
+		label="Describe my data",
+		data=buffer,
+		file_name="outputpath",
+		mime="application/vnd.ms-excel")
     return outputpath
 
 
@@ -244,6 +253,8 @@ if st.checkbox('Technical overview'):
 		''')
 
 	
+buffer = io.BytesIO()
+
 if use_example_file:
 	uploaded_file = "adult.csv"
 
@@ -257,6 +268,11 @@ if uploaded_file:
 	st.write("## Describe Data")
 	
 	#st.dataframe(described_df.tail(8))
-	download_button = st.download_button(
-		label="Describe my data"
-		, data=described_df.astype(str))
+	outputpath = to_xlsx( described_df
+			    , outputdir='.\\'
+			    , prefix='describedf'
+			    , dfname='dfname123'
+			    , include_date=True
+			    , include_time=True
+			    , include_nrow=True
+			    , include_ncol=True)
