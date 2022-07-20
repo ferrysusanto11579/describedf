@@ -268,7 +268,7 @@ if uploaded_file:
 	
 	st.write("## Data Preview")
 	st.write('shape: %s'%(str(df.shape)))
-	st.dataframe(df, height=100)
+	st.dataframe(df, height=400)
 
 	st.write("## Describe Data")
 	tmpdf = described_df.copy()
