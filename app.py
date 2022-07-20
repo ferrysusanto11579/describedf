@@ -267,7 +267,7 @@ if uploaded_file:
 	described_df = describe_df(df)
 	
 	st.write("## Data Preview")
-	st.write('shape: %s'%(df.shape))
+	st.write('shape: %s'%(str(df.shape)))
 	st.dataframe(df.tail(8))
 
 	st.write("## Describe Data")
