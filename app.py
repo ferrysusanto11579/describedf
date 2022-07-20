@@ -270,12 +270,11 @@ if uploaded_file:
 	st.dataframe(df.tail(8))
 
 	st.write("## Describe Data")
-	
 	tmpdf = described_df.copy()
 	for c in tmpdf.columns:
 		if tmpdf[c].dtype == 'object':
 			tmpdf[c] = tmpdf[c].replace('\n',', ')
-	st.dataframe(tmpdf.tail(8))
+	st.dataframe(tmpdf.tail(8).astype(str))
 	
 	outputpath = to_xlsx( described_df
 			    , original_df=df
