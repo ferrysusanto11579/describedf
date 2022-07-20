@@ -117,8 +117,7 @@ def describe_df(df):
     
     return df_desc
 
- to_xlsx(df, outputdir='.\\', prefix=None, dfname=None, include_date=True, include_time=True
-            , include_nrow=True, include_ncol=True):
+def to_xlsx(df, outputdir='.\\', prefix=None, dfname=None, include_date=True, include_time=True, include_nrow=True, include_ncol=True):
     ## Output to xlsx
     nrow, ncol = df.shape
     tmpprefix = '' if prefix is None else prefix
