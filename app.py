@@ -204,11 +204,17 @@ with st.sidebar:
 	st.write('## Input data')
 	uploaded_file = st.file_uploader("Upload CSV", type=".csv")
 	use_example_file = st.checkbox("Use example file", False, help="Adult Data Set from UCI")
+		
+	st.write('### Output file name settings')
+	outputfile_prefix = st.text_input('Prefix', value='describedf', placeholder='(optional)')
+	outputfile_dfname = st.text_input('Dataframe name', placeholder='(optional)')
+	outputfile_include_date = st.checkbox("Include date", True)
+	outputfile_include_time = st.checkbox("Include time", True)
+	outputfile_include_nrow = st.checkbox("Include number of instances", True)
+	outputfile_include_ncol = st.checkbox("Include number of columns", True)
 	
 	
 	
-
-
 ##################################################################### MAIN PAGE
 st.write('# Describe data frame')
 
@@ -251,15 +257,7 @@ if uploaded_file:
 	st.write("## Describe Data")
 	
 	with st.form(key="download_form"):
-		submit_button = st.form_submit_button(label="Describe my data")
 		st.write('### Output file name settings')
 		st.dataframe(described_df.tail(8), width=None, height=None)
 		
-		st.write('### Output file name settings')
-		outputfile_prefix = st.text_input('Prefix', value='describedf', placeholder='(optional)')
-		outputfile_dfname = st.text_input('Dataframe name', placeholder='(optional)')
-		outputfile_include_date = st.checkbox("Include date", True)
-		outputfile_include_time = st.checkbox("Include time", True)
-		outputfile_include_nrow = st.checkbox("Include number of instances", True)
-		outputfile_include_ncol = st.checkbox("Include number of columns", True)
-		
+		submit_button = st.form_submit_button(label="Describe my data")
