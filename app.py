@@ -222,7 +222,7 @@ with st.sidebar:
 		
 	st.write('# Output settings')
 	outputfile_prefix = st.text_input('Filename Prefix', value='describedf', placeholder='(optional)')
-	outputfile_dfname = st.text_input('Dataframe name', placeholder='(optional)')
+	outputfile_dfname = st.text_input('Dataframe name', value='AdultDataFromUCI', placeholder='(optional)')
 	outputfile_include_date = st.checkbox("Include date", True)
 	outputfile_include_time = st.checkbox("Include time", True)
 	outputfile_include_nrow = st.checkbox("Include number of instances", True)
