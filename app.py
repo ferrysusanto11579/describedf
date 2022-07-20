@@ -247,7 +247,7 @@ if st.checkbox('How to use this app'):
 				* Configure the output file name
 			2. Preview the data
 			3. Investigate data statistics, including: count, null%, number of unique values, min, max, etc
-			4. Download the described data frame to your local to: easier investigation and note taking, etc
+			4. Download the _described data frame_ to your local to: easier investigation and note-taking, etc
 		''')
 
 
