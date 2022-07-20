@@ -200,7 +200,7 @@ def to_xlsx(df, outputdir='.\\', prefix=None, dfname=None, include_date=True, in
 	
 	# Close the Pandas Excel writer and output the Excel file to the buffer
         writer.save()
-	
+        
 	download_button = st.download_button(
 	    label="Describe my data",
 	    data=buffer,
