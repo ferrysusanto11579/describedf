@@ -204,7 +204,7 @@ def to_xlsx(df, outputdir='.\\', prefix=None, dfname=None, include_date=True, in
         writer.save()
         
         download_button = st.download_button(
-            label="Download .xlsx",
+            label="Download output (.xlsx)",
             data=buffer,
             file_name=outputpath,
             mime="application/vnd.ms-excel")
