@@ -18,7 +18,7 @@ with st.sidebar:
 	
 	outputfile_prefix = st.text_input('Output file name prefix', value='describedf', placeholder='(optional)')
 	outputfile_dfname = st.text_input('Dataframe name', placeholder='(optional)')
-	st.write('Additional output file name configurations:')
+	st.header('Additional settings:')
 	outputfile_include_date = st.checkbox("Include date", True)
 	outputfile_include_time = st.checkbox("Include time", True)
 	outputfile_include_nrow = st.checkbox("Include number of instances", True)
