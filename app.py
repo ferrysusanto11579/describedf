@@ -121,9 +121,11 @@ def describe_df(df):
     
     return df_desc
 
-def to_xlsx(df, outputdir='.\\', prefix=None, dfname=None, include_date=True, include_time=True, include_nrow=True, include_ncol=True):
+def to_xlsx(df, original_df=None, outputdir='.\\', prefix=None, dfname=None, include_date=True, include_time=True, include_nrow=True, include_ncol=True):
     ## Output to xlsx
-    nrow, ncol = df.shape
+    nrow, ncol = None, None
+    if original_df is not None:
+	nrow, ncol = original_df.shape
     tmpprefix = '' if prefix is None else prefix
     tmpname = '' if dfname is None else dfname
     tmptime = ''
@@ -132,8 +134,8 @@ def to_xlsx(df, outputdir='.\\', prefix=None, dfname=None, include_date=True, in
         if include_time:
             tmptime = tmptime+'-%H%M%S' if tmptime!='' else '%H%M%S'
         tmptime = dt.datetime.now().strftime(tmptime)
-    tmpnrow = 'nrow%d'%(nrow) if include_nrow else ''
-    tmpncol = 'ncol%d'%(ncol) if include_ncol else ''
+    tmpnrow = 'nrow%d'%(nrow) if original_df is not None include_nrow else ''
+    tmpncol = 'ncol%d'%(ncol) if original_df is not None include_ncol else ''
     tmpcomponents = [tmpprefix, tmpname, tmptime, tmpnrow, tmpncol]
     tmpcomponents = [c for c in tmpcomponents if c!='']
     outputpath = outputdir + '%s.xlsx' % ('-'.join(tmpcomponents))
@@ -271,6 +273,7 @@ if uploaded_file:
 	
 	#st.dataframe(described_df.tail(8))
 	outputpath = to_xlsx( described_df
+			    , original_df=df
 			    , outputdir='.\\'
 			    , prefix=outputfile_prefix
 			    , dfname=outputfile_dfname
