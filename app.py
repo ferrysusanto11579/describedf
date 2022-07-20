@@ -134,8 +134,8 @@ def to_xlsx(df, original_df=None, outputdir='.\\', prefix=None, dfname=None, inc
         if include_time:
             tmptime = tmptime+'-%H%M%S' if tmptime!='' else '%H%M%S'
         tmptime = dt.datetime.now().strftime(tmptime)
-    tmpnrow = 'nrow%d'%(nrow) if original_df is not None include_nrow else ''
-    tmpncol = 'ncol%d'%(ncol) if original_df is not None include_ncol else ''
+    tmpnrow = 'nrow%d'%(nrow) if original_df is not None and include_nrow else ''
+    tmpncol = 'ncol%d'%(ncol) if original_df is not None and include_ncol else ''
     tmpcomponents = [tmpprefix, tmpname, tmptime, tmpnrow, tmpncol]
     tmpcomponents = [c for c in tmpcomponents if c!='']
     outputpath = outputdir + '%s.xlsx' % ('-'.join(tmpcomponents))
