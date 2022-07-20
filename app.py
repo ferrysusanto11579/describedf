@@ -256,7 +256,6 @@ if uploaded_file:
 
 	st.write("## Describe Data")
 	
-	st.write('### Output file name settings')
-	st.dataframe(described_df.tail(8))
+	#st.dataframe(described_df.tail(8))
 	with st.form(key="download_form"):
 		submit_button = st.form_submit_button(label="Describe my data")
