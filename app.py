@@ -216,11 +216,11 @@ def to_xlsx(df, original_df=None, outputdir='.\\', prefix=None, dfname=None, inc
 ##################################################################### SIDEBAR
 
 with st.sidebar:
-	st.write('## Input data')
+	st.write('# Input data')
 	uploaded_file = st.file_uploader("Upload CSV", type=".csv")
 	use_example_file = st.checkbox("Use example file", False, help="Adult Data Set from UCI")
 		
-	st.write('### Output settings')
+	st.write('# Output settings')
 	outputfile_prefix = st.text_input('Filename Prefix', value='describedf', placeholder='(optional)')
 	outputfile_dfname = st.text_input('Dataframe name', placeholder='(optional)')
 	outputfile_include_date = st.checkbox("Include date", True)
@@ -268,7 +268,7 @@ if uploaded_file:
 	
 	st.write("## Data Preview")
 	st.write('shape: %s'%(str(df.shape)))
-	st.dataframe(df.tail(8))
+	st.dataframe(df, height=100)
 
 	st.write("## Describe Data")
 	tmpdf = described_df.copy()
