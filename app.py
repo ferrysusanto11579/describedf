@@ -238,6 +238,13 @@ st.write('## Introduction')
 if st.checkbox('Summary'):
 	st.write('''
 			* Data source: [Adult Data Set @ UCI](https://archive.ics.uci.edu/ml/datasets/Adult)
+			* How to use this app:
+				1. On the sidebar:
+					* Upload data (in csv format) or tick the box to load the sample dataset
+					* Configure the output file name
+				2. Preview the data
+				3. Investigate data statistics, including: count, null%, number of unique values, min, max, etc
+				4. Download the _described data frame_ to your local to: easier investigation and note-taking, etc
 		''')
 
 if st.checkbox('How to use this app'):
